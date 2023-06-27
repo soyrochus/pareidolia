@@ -14,7 +14,6 @@ Clone the repository. Use the dependency and package manager [Poetry](https://py
 ```bash
 poetry install
 ```
-
 ## Configuration for usage with OpenAI (Visual Studio Code)
 
 Create a text file _"dev.env"_ in the root of the project. This will contain the "OPENAI_API_KEY" environment variable used by the application to obtain the token associated to a valid OpenAI account when calling the API.
@@ -44,11 +43,19 @@ The environment variable is loaded into the execution context of the application
 
 ## Configuration for usage with OpenAI (JupyterLab)
 
-The OPENAI_API_KEY should be loaded in an Environment Variable before starting jupyter-lab. This can be by setting the OPENAI_API_KEY environment variable before starting the JupyterLab executable. For example, in Powershell:
+The OPENAI_API_KEY should be loaded in an Environment Variable before starting jupyter-lab. This can be by setting the OPENAI_API_KEY environment variable before starting the JupyterLab executable. For example, in Powershell on Windows you can create a file "devenv.ps1" with the following content:
 
-```Powershell
+```powershell
 $Env:OPENAI_API_KEY="sk-A_seCR_et_key_GENERATED_foryou_by_OPENAI"
 . jupyter-lab.exI
+```
+
+And on Mac and Linux you can create a file "devenv.sh" with the following content:
+
+```bash
+#!/bin/bash
+export OPENAI_API_KEY=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
+jupyter-lab
 ```
 
 ## Usage
@@ -58,13 +65,17 @@ $Env:OPENAI_API_KEY="sk-A_seCR_et_key_GENERATED_foryou_by_OPENAI"
 poetry shell
 ```
 
-Running the Jupyter environment (from Unix)
+Running the Jupyter environment with the aformentioned scripts. On Linux:
 
 ```bash
-jupyter-lab
+./devenv.sh
 ```
 
-Or the equivalent Powershell script with the custom prompt in Windows.
+and on Windows:
+
+```powershell
+./devenv.ps1
+```
 
 ## Contributing
 

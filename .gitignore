@@ -140,3 +140,4 @@ ui-tests/.pnp.*
 
 dev.env
 devenv.ps1
+devenv.sh
