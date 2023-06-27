@@ -15,7 +15,7 @@ Clone the repository. Use the dependency and package manager [Poetry](https://py
 poetry install
 ```
 
-## Configuration for usage with OpenAI
+## Configuration for usage with OpenAI (Visual Studio Code)
 
 Create a text file _"dev.env"_ in the root of the project. This will contain the "OPENAI_API_KEY" environment variable used by the application to obtain the token associated to a valid OpenAI account when calling the API.
 
@@ -42,6 +42,14 @@ The environment variable is loaded into the execution context of the application
 }
 ```
 
+## Configuration for usage with OpenAI (JupyterLab)
+
+The OPENAI_API_KEY should be loaded in an Environment Variable before starting jupyter-lab. This can be by setting the OPENAI_API_KEY environment variable before starting the JupyterLab executable. For example, in Powershell:
+
+```Powershell
+$Env:OPENAI_API_KEY="sk-A_seCR_et_key_GENERATED_foryou_by_OPENAI"
+. jupyter-lab.exI
+```
 
 ## Usage
 [Activate the Python virtual environment](https://python-poetry.org/docs/basic-usage/#activating-the-virtual-environment) with
@@ -50,12 +58,13 @@ The environment variable is loaded into the execution context of the application
 poetry shell
 ```
 
-Running the Jupyter environment:
+Running the Jupyter environment (from Unix)
 
 ```bash
 jupyter-lab
 ```
 
+Or the equivalent Powershell script with the custom prompt in Windows.
 
 ## Contributing
 
